@@ -8,9 +8,9 @@ const { engine } = require('express-handlebars'); //Found fix
 app.engine('handlebars', engine({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
-// // Body Parser Middleware
-// app.use(express.json());
-// app.use(express.urlencoded({ extended: false }));
+// Body Parser Middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
 //Homepage Route (ignores static folder route)
 app.get('/', (req, res) =>
